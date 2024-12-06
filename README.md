@@ -20,7 +20,7 @@ Check battery health for Windows
 ## DOWNLOAD
 
 > [!NOTE]
-> Ouhm... later when I found the way to compile to single exe
+> Ouhm... not yet
 
 ---
 
