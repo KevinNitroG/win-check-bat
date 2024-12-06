@@ -17,58 +17,44 @@ async function execBatteryReport(output: string): Promise<void> {
 }
 
 function getCapacity(document: Document): {
-  designCapacityString: string;
-  designCapacity: number;
-  fullChargedCapacityString: string;
-  fullChargedCapacity: number;
+  design: string;
+  fullCharged: string;
 } {
-  function extractCapacityNumber(capacity: string): number {
-    const match: RegExpMatchArray = capacity.match(/^([\d,]+)/);
-
-    if (match) {
-      const numberOnly = match[1].replace(/,/g, '');
-      return parseInt(numberOnly);
-    }
-  }
   const allRows: NodeListOf<HTMLTableRowElement> = document
     .querySelectorAll('body > table')
     .item(1)
     .querySelector('tbody')
     .querySelectorAll('tr');
-  const designCapacityString: string = allRows
+  const design: string = allRows
     .item(4)
     .querySelectorAll('td')
     .item(1)
     .textContent.trim();
-  const fullChargedCapacityString: string = allRows
+  const fullCharged: string = allRows
     .item(6)
     .querySelectorAll('td')
     .item(1)
     .textContent.trim();
-  const designCapacity: number = extractCapacityNumber(designCapacityString);
-  const fullChargedCapacity: number = extractCapacityNumber(
-    fullChargedCapacityString,
-  );
 
-  return {
-    designCapacityString,
-    designCapacity,
-    fullChargedCapacityString,
-    fullChargedCapacity,
-  };
+  return { design, fullCharged };
 }
 
 function printBatteryInfo(document: Document): void {
-  const {
-    designCapacityString,
-    designCapacity,
-    fullChargedCapacityString,
-    fullChargedCapacity,
-  } = getCapacity(document);
-  console.log(`Design capacity: ${designCapacityString}`);
-  console.log(`Full charged capacity: ${fullChargedCapacityString}`);
+  function extractCapacityNumber(capacity: string): number {
+    const match: RegExpMatchArray = capacity.match(/^([\d,]+)/);
+    if (match) {
+      const numberOnly = match[1].replace(/,/g, '');
+      return parseInt(numberOnly);
+    }
+    throw 'Cannot extract capacity number!';
+  }
+  const { design, fullCharged } = getCapacity(document);
+  const designNum: number = extractCapacityNumber(design);
+  const fullChargedNum: number = extractCapacityNumber(fullCharged);
+  console.log(`Design capacity: ${design}`);
+  console.log(`Full charged capacity: ${fullCharged}`);
   console.log(
-    `Battery health: ${Math.round((fullChargedCapacity / designCapacity) * 100)}%`,
+    `Battery health: ${Math.round((fullChargedNum / designNum) * 100)}%`,
   );
 }
 
