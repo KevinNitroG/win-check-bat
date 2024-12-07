@@ -1,21 +1,30 @@
 {
-  "name": "win-battery-check",
-  "version": "0.1.0",
+  "name": "win-check-bat",
+  "version": "0.1.1",
   "description": "Check battery health for Windows",
-  "main": "src\\index.ts",
+  "keywords": [
+    "win-check-bat",
+    "windows",
+    "kevinnitro"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "win-check-bat": "dist/index.js"
+  },
   "scripts": {
-    "start": "npx ts-node src\\index.ts"
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KevinNitroG/win-check-battery.git"
+    "url": "git+ssh://git@github.com/KevinNitroG/win-check-bat.git"
   },
   "author": "KevinNitroG",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KevinNitroG/win-check-battery/issues"
+    "url": "https://github.com/KevinNitroG/win-check-bat/issues"
   },
-  "homepage": "https://github.com/KevinNitroG/win-check-battery",
+  "homepage": "https://github.com/KevinNitroG/win-check-bat",
   "dependencies": {
     "jsdom": "^25.0.1",
     "tmp": "^0.2.3"

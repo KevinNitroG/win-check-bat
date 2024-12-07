@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { readFileSync, close as fsClose } from 'fs';
 import { JSDOM } from 'jsdom';
 import util from 'node:util';
