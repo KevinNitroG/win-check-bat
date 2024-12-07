@@ -1,6 +1,6 @@
 {
   "name": "win-check-bat",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Check battery health for Windows",
   "keywords": [
     "win-check-bat",
@@ -9,7 +9,10 @@
   ],
   "main": "dist/index.js",
   "bin": {
-    "win-check-bat": "dist/index.js"
+    "win-check-bat": "bin/win-check-bat.js"
+  },
+  "directories": {
+    "bin": "bin"
   },
   "scripts": {
     "prepublishOnly": "npm run build",
