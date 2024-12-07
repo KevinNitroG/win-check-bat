@@ -47,5 +47,5 @@ npx win-check-bat
 
 ```sh
 npm i
-npm run start # or "npx ts-node src\index.ts"
+npm run dev
 ```
