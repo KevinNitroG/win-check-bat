@@ -9,7 +9,9 @@ Check battery health for Windows
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [DOWNLOAD](#download)
+- [USAGE](#usage)
+  - [Command](#command)
+  - [Executable file](#executable-file)
 - [PREVIEW](#preview)
 - [DEV](#dev)
 
@@ -17,7 +19,18 @@ Check battery health for Windows
 
 ---
 
-## DOWNLOAD
+## USAGE
+
+### Command
+
+> [!IMPORTANT]
+> Require [NodeJS](https://nodejs.org/en/download/)
+
+```sh
+npx win-check-bat
+```
+
+### Executable file
 
 > [!NOTE]
 > Ouhm... not yet
