@@ -32,7 +32,8 @@
   "homepage": "https://github.com/KevinNitroG/win-check-bat",
   "dependencies": {
     "jsdom": "^25.0.1",
-    "tmp": "^0.2.3"
+    "tmp": "^0.2.3",
+    "which": "^5.0.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",

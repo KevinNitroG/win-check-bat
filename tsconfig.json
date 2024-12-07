@@ -5,6 +5,7 @@
     "target": "ESNext",
     "moduleResolution": "nodenext",
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "strict": true
   }
 }
