@@ -50,7 +50,7 @@ npx win-check-bat
 
 ## PREVIEW
 
-![preview](assets/images/preview.png)
+![preview](../assets/images/preview.png)
 
 ---
 
