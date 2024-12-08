@@ -1,11 +1,16 @@
 {
   "name": "win-check-bat",
-  "version": "0.1.5",
+  "version": "0.0.0-development",
   "description": "Check battery health for Windows",
+  "engines": {
+    "node": "^22.0.0 || ^23.0.0"
+  },
+  "type": "module",
   "keywords": [
     "win-check-bat",
     "windows",
-    "kevinnitro"
+    "kevinnitro",
+    "kevinnitrog"
   ],
   "main": "dist/index.js",
   "bin": {
@@ -18,7 +23,12 @@
     "prepublishOnly": "npm run build",
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "npm run build && npm run start"
+    "dev": "npm run build && npm run start",
+    "prepare": "node .husky/install.mjs",
+    "lint": "eslint --cache .",
+    "format": "prettier --write --cache .",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --edit"
   },
   "repository": {
     "type": "git",
@@ -30,15 +40,28 @@
     "url": "https://github.com/KevinNitroG/win-check-bat/issues"
   },
   "homepage": "https://github.com/KevinNitroG/win-check-bat",
+  "packageManager": "^npm@10.9.0",
   "dependencies": {
     "jsdom": "^25.0.1",
     "tmp": "^0.2.3",
     "which": "^5.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.16.0",
     "@types/jsdom": "^21.1.7",
     "@types/tmp": "^0.2.6",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "semantic-release": "^24.2.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
+  },
+  "publishConfig": {
+    "provenance": true
   }
 }

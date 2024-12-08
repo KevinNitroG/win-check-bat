@@ -1,0 +1,5 @@
+#!/bin/sh
+
+FORCE_COLOR=1 npm run lint-staged --allow-empty
+
+# vim:set fileformat=unix filetype=sh:
