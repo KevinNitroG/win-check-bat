@@ -9,6 +9,8 @@ permissions:
 
 jobs:
   release:
+    env:
+      HUSKY: 0
     name: Release
     runs-on: ubuntu-latest
     permissions:
