@@ -5,7 +5,7 @@ class ProcessInfo {
   #info: Info;
 
   constructor(document: Document) {
-    this.#info = this.#getCapacity(document);
+    this.#info = ProcessInfo.#getCapacity(document);
   }
 
   static #extractCapacityNumber(capacity: string): number {
@@ -17,7 +17,7 @@ class ProcessInfo {
     throw new Error("Cannot extract capacity number!");
   }
 
-  #getCapacity(document: Document): Info {
+  static #getCapacity(document: Document): Info {
     const allRows: NodeListOf<HTMLTableRowElement> | undefined = document
       .querySelectorAll("body > table")
       ?.item(1)
