@@ -1,11 +1,11 @@
-import { readFileSync } from "fs";
-import { JSDOM } from "jsdom";
-import open from "open";
-import { options } from "./modules/commander.js";
-import { execBatteryReport } from "./modules/execBatteryReport.js";
-import { genTmpFile } from "./modules/genTmpFile.js";
-import { ProcessInfo } from "./modules/processInfo.js";
-import sleep from "sleep-promise";
+import { readFileSync } from 'fs';
+import { JSDOM } from 'jsdom';
+import open from 'open';
+import { options } from './modules/commander.js';
+import { execBatteryReport } from './modules/execBatteryReport.js';
+import { genTmpFile } from './modules/genTmpFile.js';
+import { ProcessInfo } from './modules/processInfo.js';
+import sleep from 'sleep-promise';
 
 async function init(): Promise<void> {
   const tempFile: string = genTmpFile();
@@ -15,7 +15,7 @@ async function init(): Promise<void> {
     console.error(`Cannot run powercfg: ${e}`);
     return;
   }
-  const HTMLContent: string = readFileSync(tempFile, "utf8");
+  const HTMLContent: string = readFileSync(tempFile, 'utf8');
   const document: Document = new JSDOM(HTMLContent).window.document;
   try {
     const processInfo: ProcessInfo = new ProcessInfo(document);

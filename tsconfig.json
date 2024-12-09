@@ -1,4 +1,6 @@
 {
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "module": "NodeNext",
     "esModuleInterop": true,
@@ -7,7 +9,8 @@
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,
-    "types": ["node"],
-    "lib": ["ESNext"]
+    "lib": ["ESNext"],
+    "noEmit": true,
+    "baseUrl": "."
   }
 }

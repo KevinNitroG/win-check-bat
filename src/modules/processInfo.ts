@@ -1,5 +1,5 @@
-import type { Info } from "../types/info.js";
-import { options } from "./commander.js";
+import type { Info } from '../types/info.js';
+import { options } from './commander.js';
 
 class ProcessInfo {
   #info: Info;
@@ -11,31 +11,31 @@ class ProcessInfo {
   static #extractCapacityNumber(capacity: string): number {
     const match: RegExpMatchArray | null = capacity.match(/^([\d,]+)/);
     if (match) {
-      const numberOnly = match[1].replace(/,/g, "");
+      const numberOnly = match[1].replace(/,/g, '');
       return parseInt(numberOnly);
     }
-    throw new Error("Cannot extract capacity number!");
+    throw new Error('Cannot extract capacity number!');
   }
 
   static #getCapacity(document: Document): Info {
     const allRows: NodeListOf<HTMLTableRowElement> | undefined = document
-      .querySelectorAll("body > table")
+      .querySelectorAll('body > table')
       ?.item(1)
-      ?.querySelector("tbody")
-      ?.querySelectorAll("tr");
+      ?.querySelector('tbody')
+      ?.querySelectorAll('tr');
     const design: string | undefined = allRows
       ?.item(4)
-      ?.querySelectorAll("td")
+      ?.querySelectorAll('td')
       ?.item(1)
       ?.textContent?.trim();
     const fullCharged: string | undefined = allRows
       ?.item(6)
-      ?.querySelectorAll("td")
+      ?.querySelectorAll('td')
       ?.item(1)
       ?.textContent?.trim();
 
     if (!allRows || !design || !fullCharged) {
-      throw new Error("Cannot get data from table in DOM");
+      throw new Error('Cannot get data from table in DOM');
     }
 
     const designNum: number = ProcessInfo.#extractCapacityNumber(design);

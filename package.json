@@ -13,7 +13,9 @@
     "kevinnitrog"
   ],
   "main": "dist/index.js",
-  "bin": "bin/index.js",
+  "bin": {
+    "win-check-bat": "bin/index.js"
+  },
   "directories": {
     "bin": "bin"
   },
