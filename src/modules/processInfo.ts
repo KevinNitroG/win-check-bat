@@ -1,5 +1,5 @@
-import type { Info } from '../types/info.js';
-import { options } from './commander.js';
+import type { Info } from 'types/info.ts';
+import { options } from '@modules/commander.ts';
 
 class ProcessInfo {
   #info: Info;

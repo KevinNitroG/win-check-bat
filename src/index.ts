@@ -3,10 +3,10 @@ import { JSDOM } from 'jsdom';
 import open from 'open';
 import sleep from 'sleep-promise';
 
-import { options } from './modules/commander.js';
-import { execBatteryReport } from './modules/execBatteryReport.js';
-import { genTmpFile } from './modules/genTmpFile.js';
-import { ProcessInfo } from './modules/processInfo.js';
+import { options } from '@modules/commander.ts';
+import { execBatteryReport } from '@modules/execBatteryReport.ts';
+import { genTmpFile } from '@modules/genTmpFile.ts';
+import { ProcessInfo } from '@modules/processInfo.ts';
 
 async function init(): Promise<void> {
   const tempFile: string = genTmpFile();

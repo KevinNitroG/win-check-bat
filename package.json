@@ -1,27 +1,16 @@
 {
   "name": "win-check-bat",
-  "version": "0.0.0-development",
-  "description": "Check battery health for Windows",
-  "engines": {
-    "node": "^22.0.0 || ^23.0.0"
-  },
-  "type": "module",
-  "keywords": [
-    "win-check-bat",
-    "windows",
-    "kevinnitro",
-    "kevinnitrog"
-  ],
-  "main": "dist/index.js",
-  "bin": {
-    "win-check-bat": "bin/index.js"
-  },
+  "main": "src/index.js",
   "directories": {
-    "bin": "bin"
+    "bin": "bin",
+    "doc": "docs"
   },
+  "files": [
+    "src/**/*"
+  ],
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
     "dev": "npm run build && npm run start",
     "prepare": "node .husky/install.mjs",
@@ -31,16 +20,6 @@
     "lint-staged": "lint-staged",
     "commitlint": "commitlint --edit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/KevinNitroG/win-check-bat.git"
-  },
-  "author": "KevinNitroG",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KevinNitroG/win-check-bat/issues"
-  },
-  "homepage": "https://github.com/KevinNitroG/win-check-bat",
   "packageManager": "^npm@10.9.0",
   "dependencies": {
     "@commander-js/extra-typings": "^12.1.0",
@@ -69,10 +48,36 @@
     "prettier": "3.4.2",
     "semantic-release": "^24.2.0",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.17.0"
   },
   "publishConfig": {
     "provenance": true
-  }
+  },
+  "engines": {
+    "node": "^22.0.0 || ^23.0.0"
+  },
+  "os": [
+    "win32"
+  ],
+  "type": "module",
+  "version": "0.0.0-development",
+  "description": "Check battery health for Windows",
+  "keywords": [
+    "win-check-bat",
+    "windows",
+    "kevinnitro",
+    "kevinnitrog"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinNitroG/win-check-bat.git"
+  },
+  "author": "KevinNitroG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KevinNitroG/win-check-bat/issues"
+  },
+  "homepage": "https://github.com/KevinNitroG/win-check-bat"
 }
