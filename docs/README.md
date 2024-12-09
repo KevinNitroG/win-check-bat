@@ -21,9 +21,9 @@ Check battery health for Windows
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [USAGE](#usage)
-  - [Command](#command)
+  - [NodeJS](#nodejs)
   - [Executable file](#executable-file)
-- [PREVIEW](#preview)
+- [SHOWCASE](#showcase)
 - [DEV](#dev)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -32,13 +32,18 @@ Check battery health for Windows
 
 ## USAGE
 
-### Command
+### NodeJS
 
 > [!IMPORTANT]
 > Require [NodeJS](https://nodejs.org/en/download/)
 
 ```sh
-npx win-check-bat
+# Install via npm
+npm i -g win-check-bat
+win-check-bat
+
+# Or temporary download and run. Not install to system $PATH
+npx win-check-bat@latest # @latest is optional (to allways check for latest ver)
 ```
 
 ### Executable file
@@ -48,9 +53,43 @@ npx win-check-bat
 
 ---
 
-## PREVIEW
+## SHOWCASE
 
-![preview](../assets/images/preview.png)
+```
+$ win-check-bat
+
+Design capacity: 54,000 mWh
+Full charged capacity: 49,680 mWh
+Battery health: 92%
+```
+
+```
+$ win-check-bat -t
+
+┌─────────────┬──────────────┐
+│ (index)     │ Values       │
+├─────────────┼──────────────┤
+│ design      │ '54,000 mWh' │
+│ fullCharged │ '49,680 mWh' │
+│ health      │ '92%'        │
+└─────────────┴──────────────┘
+```
+
+```
+$ win-check-bat -h
+
+Usage: win-check-bat [options]
+
+check battery health for Windows
+
+Options:
+  -t, --table                       print as table
+  -p, --precise-health              calculate precise health (not round)
+  -o, --open-html                   open HTML exported file
+  -T, --open-html-timeout <number>  open HTML timeout (s) before deleting temp file. Increase if your browser cannot open soon enough before open
+                                    HTML file. (default: "1")
+  -h, --help                        display help for command
+```
 
 ---
 
@@ -58,5 +97,5 @@ npx win-check-bat
 
 ```sh
 npm i
-npm run dev
+npm run dev -- -- -- -t -p -o
 ```
