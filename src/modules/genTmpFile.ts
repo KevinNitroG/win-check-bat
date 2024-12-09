@@ -1,5 +1,5 @@
-import tmp from 'tmp';
 import { close } from 'fs';
+import tmp from 'tmp';
 
 function genTmpFile(): string {
   tmp.setGracefulCleanup();

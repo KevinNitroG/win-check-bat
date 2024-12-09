@@ -1,11 +1,12 @@
 import { readFileSync } from 'fs';
 import { JSDOM } from 'jsdom';
 import open from 'open';
+import sleep from 'sleep-promise';
+
 import { options } from './modules/commander.js';
 import { execBatteryReport } from './modules/execBatteryReport.js';
 import { genTmpFile } from './modules/genTmpFile.js';
 import { ProcessInfo } from './modules/processInfo.js';
-import sleep from 'sleep-promise';
 
 async function init(): Promise<void> {
   const tempFile: string = genTmpFile();
