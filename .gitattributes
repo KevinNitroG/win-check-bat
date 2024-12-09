@@ -1,6 +1,3 @@
-.husky/{commit-msg,pre-commit,applypatch-msg,commit-msg,h,husky.sh,post-applypatch,post-checkout,post-commit,post-merge,post-rewrite,pre-applypatch,pre-auto-gc,pre-commit,pre-merge-commit,pre-push,pre-rebase,prepare-commit-msg} text=auto eol=lf
-
-
 # Common settings that generally should always be used with your language specific settings
 
 # Auto detect text files and perform LF normalization
@@ -86,3 +83,6 @@
 .gitkeep       export-ignore
 # Apply override to all files in the directory
 *.md linguist-detectable
+
+# USER CUSTOMISATION
+.husky/{commit-msg,pre-commit,applypatch-msg,commit-msg,h,husky.sh,post-applypatch,post-checkout,post-commit,post-merge,post-rewrite,pre-applypatch,pre-auto-gc,pre-commit,pre-merge-commit,pre-push,pre-rebase,prepare-commit-msg} text=auto eol=lf linguist-language=shell linguist-detectable
