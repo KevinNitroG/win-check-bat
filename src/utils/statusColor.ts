@@ -6,9 +6,9 @@ function getStatusColor(status: Status): StatusColor {
     case Status.excellent:
       return 'green';
     case Status.good:
-      return 'white';
-    case Status.fair:
       return 'cyan';
+    case Status.fair:
+      return 'white';
     case Status.poor:
       return 'yellow';
     case Status.veryBad:

@@ -65,7 +65,7 @@ $ win-check-bat
 │   54,000 mWh    │      49,680 mWh       │  92%   │ Excellent │
 └─────────────────┴───────────────────────┴────────┴───────────┘
 
-Almost like new; minimal wear and tear; delivers peak performance.
+The battery is in optimal condition, exhibiting minimal degradation and maintaining near-peak performance. It retains most of its original capacity.
 ```
 
 ```
@@ -75,7 +75,7 @@ Design capacity: 54,000 mWh
 Full charged capacity: 49,680 mWh
 Battery health: 92%
 Status: Excellent
-Description: Almost like new; minimal wear and tear; delivers peak performance.
+Description: The battery is in optimal condition, exhibiting minimal degradation and maintaining near-peak performance. It retains most of its original capacity.
 ```
 
 ```

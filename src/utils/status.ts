@@ -17,15 +17,15 @@ function getStatus(health: number): Status {
 function getStatusDesc(status: Status): string {
   switch (status) {
     case Status.excellent:
-      return 'Almost like new; minimal wear and tear; delivers peak performance.';
+      return 'The battery is in optimal condition, exhibiting minimal degradation and maintaining near-peak performance. It retains most of its original capacity.';
     case Status.good:
-      return 'Slightly degraded but still performs well; may hold slightly less charge.';
+      return 'The battery demonstrates slight degradation, with a marginal reduction in its maximum capacity. Performance remains reliable, and the impact on usability is minimal.';
     case Status.fair:
-      return 'Noticeable degradation; reduced battery life; may need charging more frequently.';
+      return 'The battery shows noticeable signs of wear, with a significant reduction in capacity. Users may experience shorter usage times between charges.';
     case Status.poor:
-      return 'Significant degradation; struggles to hold charge; likely needs replacement.';
+      return "The battery's capacity has degraded considerably, resulting in reduced functionality and the need for more frequent charging. Replacement is recommended.";
     case Status.veryBad:
-      return 'Severely degraded; may not last long or support normal device usage.';
+      return 'The battery is severely degraded, with insufficient capacity to support normal device operation. Immediate replacement is advised to ensure functionality.';
     default:
       throw new Error('Unknown Status');
   }
