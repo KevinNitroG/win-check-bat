@@ -1,4 +1,4 @@
-import type { Info } from 'types/info.ts';
+import type { Info } from '@ctypes/info.ts';
 import { options } from '@modules/commander.ts';
 
 class ProcessInfo {

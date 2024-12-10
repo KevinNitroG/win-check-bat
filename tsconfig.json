@@ -11,10 +11,11 @@
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "allowImportingTsExtensions": true,
     "paths": {
-      "@modules/*": ["modules/*"]
+      "@modules/*": ["src/modules/*"],
+      "@ctypes/*": ["src/types/*"]
     }
   }
 }
