@@ -1,20 +1,19 @@
 {
-  "include": ["src", "bin"],
-  "exclude": ["node_modules", "dist"],
+  "include": ["src"],
   "compilerOptions": {
     "esModuleInterop": true,
-    "lib": ["ESNext"],
     "module": "NodeNext",
     "moduleResolution": "nodenext",
-    "noEmit": true,
+    "noEmit": false,
     "outDir": "dist",
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
     "baseUrl": ".",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "paths": {
       "@modules/*": ["src/modules/*"],
+      "@utils/*": ["src/utils/*"],
       "@ctypes/*": ["src/types/*"]
     }
   }

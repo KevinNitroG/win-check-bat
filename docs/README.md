@@ -37,13 +37,14 @@ Check battery health for Windows
 > [!IMPORTANT]
 > Require [NodeJS](https://nodejs.org/en/download/)
 
-```sh
+```bash
 # Install via npm
 npm i -g win-check-bat
 win-check-bat
 
 # Or temporary download and run. Not install to system $PATH
-npx win-check-bat@latest # @latest is optional (to allways check for latest ver)
+# @latest tag is optional (to allways check for latest ver)
+npx win-check-bat@latest
 ```
 
 ### Executable file
@@ -58,21 +59,23 @@ npx win-check-bat@latest # @latest is optional (to allways check for latest ver)
 ```
 $ win-check-bat
 
+┌─────────────────┬───────────────────────┬────────┬───────────┐
+│ Design Capacity │ Full Charged Capacity │ Health │  Status   │
+├─────────────────┼───────────────────────┼────────┼───────────┤
+│   54,000 mWh    │      49,680 mWh       │  92%   │ Excellent │
+└─────────────────┴───────────────────────┴────────┴───────────┘
+
+Almost like new; minimal wear and tear; delivers peak performance.
+```
+
+```
+$ win-check-bat -l
+
 Design capacity: 54,000 mWh
 Full charged capacity: 49,680 mWh
 Battery health: 92%
-```
-
-```
-$ win-check-bat -t
-
-┌─────────────┬──────────────┐
-│ (index)     │ Values       │
-├─────────────┼──────────────┤
-│ design      │ '54,000 mWh' │
-│ fullCharged │ '49,680 mWh' │
-│ health      │ '92%'        │
-└─────────────┴──────────────┘
+Status: Excellent
+Description: Almost like new; minimal wear and tear; delivers peak performance.
 ```
 
 ```
@@ -83,11 +86,14 @@ Usage: win-check-bat [options]
 check battery health for Windows
 
 Options:
-  -t, --table                       print as table
+  --no-status                       don't print out the status and description
+  -l, --line                        print line by line
   -p, --precise-health              calculate precise health (not round)
   -o, --open-html                   open HTML exported file
-  -T, --open-html-timeout <number>  open HTML timeout (s) before deleting temp file. Increase if your browser cannot open soon enough before open
-                                    HTML file. (default: "1")
+  -T, --open-html-timeout <second>  open HTML timeout (s) before deleting temp
+                                    file. Increase if your browser cannot open
+                                    soon enough before open HTML file.
+                                    (default: "1")
   -h, --help                        display help for command
 ```
 
@@ -95,7 +101,7 @@ Options:
 
 ## DEV
 
-```sh
+```bash
 npm i
 npm run dev -- -- -- -t -p -o
 ```

@@ -1,5 +1,9 @@
-import type { Info } from '@ctypes/info.ts';
-import { options } from '@modules/commander.ts';
+import type { Info } from '@ctypes/info.js';
+import type { Status } from '@ctypes/status.js';
+import { options } from '@modules/commander.js';
+import { getStatus, getStatusDesc } from '@utils/status.js';
+import { getStatusColor } from '@utils/statusColor.js';
+import { Table } from 'console-table-printer';
 
 class ProcessInfo {
   #info: Info;
@@ -41,28 +45,61 @@ class ProcessInfo {
     const designNum: number = ProcessInfo.#extractCapacityNumber(design);
     const fullChargedNum: number =
       ProcessInfo.#extractCapacityNumber(fullCharged);
-    let healthNum: number = (fullChargedNum / designNum) * 100;
+    let health: number = (fullChargedNum / designNum) * 100;
     if (options.preciseHealth) {
-      healthNum = Math.round(healthNum);
+      health = Math.round(health);
     }
-    return { design, fullCharged, health: `${healthNum}%` };
+    const status: Status = getStatus(health);
+    return { design, fullCharged, health, status };
   }
 
   #printInfoLineByLine(): void {
     console.log(`Design capacity: ${this.#info.design}`);
     console.log(`Full charged capacity: ${this.#info.fullCharged}`);
-    console.log(`Battery health: ${this.#info.health}`);
+    console.log(`Battery health: ${this.#info.health}%`);
+    if (options.status) {
+      console.log(`Status: ${this.#info.status}`);
+      console.log(`Description: ${getStatusDesc(this.#info.status)}`);
+    }
   }
 
   #printInfoTable(): void {
-    console.table(this.#info);
+    const table = new Table({
+      columns: [
+        { name: 'design', title: 'Design Capacity', alignment: 'center' },
+        {
+          name: 'fullCharged',
+          title: 'Full Charged Capacity',
+          alignment: 'center',
+        },
+        { name: 'health', title: 'Health', alignment: 'center' },
+        {
+          name: 'status',
+          title: 'Status',
+          alignment: 'center',
+          color: getStatusColor(this.#info.status),
+        },
+      ],
+      disabledColumns: [!options.status ? 'status' : ''],
+    });
+    table.addRow({
+      design: this.#info.design,
+      fullCharged: this.#info.fullCharged,
+      health: `${this.#info.health}%`,
+      status: this.#info.status,
+    });
+    table.printTable();
+    console.log();
+    if (options.status) {
+      console.log(getStatusDesc(this.#info.status));
+    }
   }
 
   printInfo(): void {
-    if (options.table) {
-      this.#printInfoTable();
-    } else {
+    if (options.line) {
       this.#printInfoLineByLine();
+    } else {
+      this.#printInfoTable();
     }
   }
 }
