@@ -46,7 +46,7 @@ class ProcessInfo {
     const fullChargedNum: number =
       ProcessInfo.#extractCapacityNumber(fullCharged);
     let health: number = (fullChargedNum / designNum) * 100;
-    if (options.preciseHealth as boolean | string) {
+    if (!options.preciseHealth as boolean | string) {
       health = Math.round(health);
     }
     const status: Status = getStatus(health);
