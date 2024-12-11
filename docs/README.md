@@ -37,7 +37,7 @@ Check battery health for Windows
 > [!IMPORTANT]
 > Require [NodeJS](https://nodejs.org/en/download/)
 
-```bash
+```sh
 # Install via npm
 npm i -g win-check-bat
 win-check-bat
@@ -64,12 +64,10 @@ $ win-check-bat
 ├─────────────────┼───────────────────────┼────────┼───────────┤
 │   54,000 mWh    │      49,680 mWh       │  92%   │ Excellent │
 └─────────────────┴───────────────────────┴────────┴───────────┘
-
-The battery is in optimal condition, exhibiting minimal degradation and maintaining near-peak performance. It retains most of its original capacity.
 ```
 
 ```
-$ win-check-bat -l
+$ win-check-bat --line --description
 
 Design capacity: 54,000 mWh
 Full charged capacity: 49,680 mWh
@@ -86,14 +84,15 @@ Usage: win-check-bat [options]
 check battery health for Windows
 
 Options:
-  --no-status                       don't print out the status and description
+  --no-status                       don't print out the status
+  -d, --description                 show silly description
   -l, --line                        print line by line
   -p, --precise-health              calculate precise health (not round)
   -o, --open-html                   open HTML exported file
-  -T, --open-html-timeout <second>  open HTML timeout (s) before deleting temp
-                                    file. Increase if your browser cannot open
-                                    soon enough before open HTML file.
-                                    (default: "1")
+  -t, --open-html-timeout <second>  open HTML timeout (s) before deleting
+                                    temp file. Increase if your browser
+                                    cannot open soon enough before open
+                                    HTML file. (default: "1")
   -h, --help                        display help for command
 ```
 
@@ -101,7 +100,7 @@ Options:
 
 ## DEV
 
-```bash
+```sh
 npm i
 npm run dev -- -- -- -t -p -o
 ```

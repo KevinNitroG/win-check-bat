@@ -46,7 +46,7 @@ class ProcessInfo {
     const fullChargedNum: number =
       ProcessInfo.#extractCapacityNumber(fullCharged);
     let health: number = (fullChargedNum / designNum) * 100;
-    if (options.preciseHealth) {
+    if (options.preciseHealth as boolean | string) {
       health = Math.round(health);
     }
     const status: Status = getStatus(health);
@@ -57,8 +57,10 @@ class ProcessInfo {
     console.log(`Design capacity: ${this.#info.design}`);
     console.log(`Full charged capacity: ${this.#info.fullCharged}`);
     console.log(`Battery health: ${this.#info.health}%`);
-    if (options.status) {
+    if (options.status as boolean | string) {
       console.log(`Status: ${this.#info.status}`);
+    }
+    if (options.description as boolean | string) {
       console.log(`Description: ${getStatusDesc(this.#info.status)}`);
     }
   }
@@ -80,7 +82,7 @@ class ProcessInfo {
           color: getStatusColor(this.#info.status),
         },
       ],
-      disabledColumns: [!options.status ? 'status' : ''],
+      disabledColumns: [(!options.status as boolean | string) ? 'status' : ''],
     });
     table.addRow({
       design: this.#info.design,
@@ -90,13 +92,13 @@ class ProcessInfo {
     });
     table.printTable();
     console.log();
-    if (options.status) {
+    if (options.description as boolean | string) {
       console.log(getStatusDesc(this.#info.status));
     }
   }
 
   printInfo(): void {
-    if (options.line) {
+    if (options.line as boolean | string) {
       this.#printInfoLineByLine();
     } else {
       this.#printInfoTable();

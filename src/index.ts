@@ -24,7 +24,7 @@ async function init(): Promise<void> {
   } catch (e) {
     console.error(`Fail to process info: ${e}`);
   }
-  if (options.openHtml) {
+  if (options.openHtml as boolean | string) {
     await open(tempFile);
     await sleep(options.openHtmlTimeout * 1000);
   }
