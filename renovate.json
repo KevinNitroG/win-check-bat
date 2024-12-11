@@ -2,5 +2,20 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", ":semanticCommits"],
   "enabledManagers": ["npm"],
-  "platform": "github"
+  "platform": "github",
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates for deps",
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Automerge non-major updates for dev deps",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["*lint*", "prettier"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
 }
