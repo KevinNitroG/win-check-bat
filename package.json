@@ -29,16 +29,19 @@
     "src/**/*"
   ],
   "scripts": {
-    "prepublishOnly": "npm run build",
     "build": "tsc && tsc-alias",
-    "start": "node dist/index.js",
+    "check": "npm run check:lint && npm run check:format",
+    "check:format": "prettier --check --cache .",
+    "check:lint": "eslint --cache .",
+    "commitlint": "commitlint --edit",
     "dev": "npm run build && npm run start",
-    "prepare": "node .husky/install.mjs",
-    "lint": "eslint --fix --cache .",
-    "format": "prettier --write --cache .",
-    "fix": "npm run lint && npm run format",
+    "fix": "npm run fix:lint && npm run fix:format",
+    "fix:format": "prettier --write --cache .",
+    "fix:lint": "eslint --fix --cache .",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint --edit"
+    "prepare": "node .husky/install.mjs",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js"
   },
   "packageManager": "^npm@10.9.0",
   "dependencies": {
