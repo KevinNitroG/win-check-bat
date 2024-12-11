@@ -6,7 +6,7 @@ program
   .option('--no-status', "don't print out the status")
   .option('-d, --description', 'show silly description')
   .option('-l, --line', 'print line by line')
-  .option('-p, --precise-health', 'calculate precise health (not round)')
+  .option('-p, --precise-health', 'calculate precise health (no round)')
   .option('-o, --open-html', 'open HTML exported file')
   .option(
     '-t, --open-html-timeout <second>',
