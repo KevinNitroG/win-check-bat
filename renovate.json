@@ -13,7 +13,6 @@
     {
       "description": "Automerge non-major updates for dev deps",
       "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["*lint*", "prettier"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
