@@ -8,8 +8,11 @@ Check battery health for Windows
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)
-![Semantic Release](https://img.shields.io/badge/semantic%20release-conventionalcommits-e10079?style=for-the-badge&logo=semanticrelease&logoColor=white)
+![Semantic Release](https://img.shields.io/badge/semantic%20release-e10079?style=for-the-badge&logo=semanticrelease&logoColor=white)
+![Conventionalcommits](https://img.shields.io/badge/conventionalcommits-fe5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)
+![Renovate Bot](https://img.shields.io/badge/renovate%20bot-308be3?style=for-the-badge&logo=renovate&logoColor=white)
 
+![Hits](https://hits.sh/github.com/KevinNitroG/VNULIB-Downloader.svg?view=today-total&style=for-the-badge&label=hits)
 [![NPM Version](https://img.shields.io/npm/v/win-check-bat?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/win-check-bat)
 [![NPM Downloads](https://img.shields.io/npm/dy/win-check-bat?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/win-check-bat)
 
@@ -38,13 +41,13 @@ Check battery health for Windows
 > Require [NodeJS](https://nodejs.org/en/download/)
 
 ```sh
-# Install via npm
+# Temporary download and run. Not install to system $PATH
+# @latest tag is optional (to always check for latest ver)
+npx win-check-bat
+
+# Or install via NPM
 npm i -g win-check-bat
 win-check-bat
-
-# Or temporary download and run. Not install to system $PATH
-# @latest tag is optional (to allways check for latest ver)
-npx win-check-bat@latest
 ```
 
 ### Executable file
