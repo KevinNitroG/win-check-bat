@@ -10,7 +10,7 @@ import tseslint from 'typescript-eslint';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    ignores: ['dist/**/*', '.husky/**/*'],
+    ignores: ['dist', '.husky', 'build'],
   },
   {
     files: ['{bin,src}/**/*.{js,mjs,cjs,ts}'],

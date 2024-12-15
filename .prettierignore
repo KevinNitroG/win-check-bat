@@ -1,5 +1,6 @@
 dist/
 temp/
+build/
 *-lock.json
 *-lock.yaml
 *-lock.yml
