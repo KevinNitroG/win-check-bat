@@ -18,6 +18,16 @@ export default [
       globals: globals.node,
       sourceType: 'module',
     },
+    rules: {
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: 'function', next: 'function' },
+        { blankLine: 'always', prev: 'function', next: 'export' },
+        { blankLine: 'always', prev: 'class', next: '*' },
+        { blankLine: 'always', prev: 'directive', next: '*' },
+        { blankLine: 'never', prev: 'directive', next: 'directive' },
+      ],
+    },
     plugins: {
       'simple-import-sort': simpleImportSort,
     },
