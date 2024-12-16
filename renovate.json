@@ -3,6 +3,7 @@
   "extends": ["config:recommended", ":semanticCommits"],
   "enabledManagers": ["npm"],
   "platform": "github",
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "description": "Automerge non-major updates for deps",
