@@ -1,6 +1,6 @@
 {
   "name": "win-check-bat",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "version": "0.0.0-development",
   "description": "Check battery health for Windows",
   "keywords": [
@@ -30,19 +30,21 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsc && tsc-alias && rollup -c",
+    "build:dev": "tsc && tsc-alias",
+    "build:prod": "npm run build:dev && rollup -c",
     "check": "npm run check:lint && npm run check:format",
     "check:format": "prettier --check --cache .",
     "check:lint": "eslint --cache .",
     "commitlint": "commitlint --edit",
-    "dev": "npm run build && npm run start",
+    "dev": "npm run build:dev && npm run start:dev",
     "fix": "npm run fix:lint && npm run fix:format",
     "fix:format": "prettier --write --cache .",
     "fix:lint": "eslint --fix --cache .",
     "lint-staged": "lint-staged",
     "prepare": "node .husky/install.mjs",
-    "prepublishOnly": "npm run build",
-    "start": "node dist/index.js"
+    "prepublishOnly": "npm run build:prod",
+    "start": "npm run build:prod && node dist/index.js",
+    "start:dev": "node build/index.js"
   },
   "dependencies": {
     "@commander-js/extra-typings": "^12.1.0",
@@ -73,7 +75,6 @@
     "prettier": "3.4.2",
     "rollup": "^4.0.0",
     "semantic-release": "^24.2.0",
-    "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.0"
