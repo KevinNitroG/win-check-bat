@@ -4,22 +4,21 @@
   "enabledManagers": ["npm"],
   "platform": "github",
   "labels": ["dependencies"],
+  "automergeType": "branch",
+  "automerge": true,
   "packageRules": [
     {
       "description": "Automerge non-major updates for deps",
       "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "matchUpdateTypes": ["minor", "patch"]
     },
     {
       "description": "Automerge non-major updates for dev deps",
       "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ],
   "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
+    "enabled": true
   }
 }
