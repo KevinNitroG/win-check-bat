@@ -54,6 +54,10 @@ win-check-bat
 
 > [!NOTE]
 > Ouhm... not yet
+>
+> Maybe never because pkg doesn't support ESM
+>
+> > More detail: https://github.com/vercel/pkg/issues/1291#issuecomment-910262419
 
 ---
 

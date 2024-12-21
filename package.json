@@ -99,9 +99,10 @@
   },
   "pkg": {
     "targets": [
-      "node23-windows-x64",
-      "node23-windows-arm64"
+      "node22-windows-arm64",
+      "node22-windows-x64"
     ],
-    "outputPath": "dist"
+    "scripts": "dist/index.js",
+    "outputPath": "dist/bin"
   }
 }
