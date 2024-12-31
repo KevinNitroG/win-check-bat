@@ -47,7 +47,7 @@
     "start:dev": "node build/index.js"
   },
   "dependencies": {
-    "@commander-js/extra-typings": "^12.1.0",
+    "@commander-js/extra-typings": "^13.0.0",
     "commander": "^12.1.0",
     "console-table-printer": "^2.12.1",
     "jsdom": "^25.0.1",
