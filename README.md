@@ -11,6 +11,7 @@ Check battery health for Windows
 ![Semantic Release](https://img.shields.io/badge/semantic%20release-e10079?style=for-the-badge&logo=semanticrelease&logoColor=white)
 ![Conventionalcommits](https://img.shields.io/badge/conventionalcommits-fe5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)
 ![Renovate Bot](https://img.shields.io/badge/renovate%20bot-308be3?style=for-the-badge&logo=renovate&logoColor=white)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKevinNitroG%2Fwin-check-bat.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FKevinNitroG%2Fwin-check-bat?ref=badge_shield)
 
 ![Hits](https://hits.sh/github.com/KevinNitroG/VNULIB-Downloader.svg?view=today-total&style=for-the-badge&label=hits)
 [![NPM Version](https://img.shields.io/npm/v/win-check-bat?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/win-check-bat)
@@ -111,3 +112,7 @@ Options:
 npm i
 npm run dev -- -- -- -t -p -o
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKevinNitroG%2Fwin-check-bat.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FKevinNitroG%2Fwin-check-bat?ref=badge_large)
