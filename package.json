@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@commander-js/extra-typings": "^12.1.0",
-    "commander": "^12.1.0",
+    "commander": "^13.0.0",
     "console-table-printer": "^2.12.1",
     "jsdom": "^25.0.1",
     "open": "^10.1.0",
